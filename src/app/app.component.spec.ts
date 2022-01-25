@@ -1,22 +1,28 @@
-import { TestBed, async } from "@angular/core/testing";
+import { TestBed, async, ComponentFixture } from "@angular/core/testing";
 import { AppComponent } from "./app.component";
+import { NavbarComponent } from "./components/shared/navbar/navbar.component";
+import { RouterTestingModule } from "@angular/router/testing";
+
 describe("AppComponent", () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let appComponent: AppComponent;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, NavbarComponent],
+      imports: [RouterTestingModule],
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
+    appComponent = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
   }));
-  //TODO: Fix it
-  xit("should create the app", async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+
+  it("should create the app", async(() => {
+    expect(appComponent).toBeTruthy();
   }));
-  //TODO: Fix it
-  xit(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual("app");
+
+  it(`should have as title 'app'`, async(() => {
+    expect(appComponent.title).toEqual("app");
   }));
   //TODO: Fix it
   xit("should render title in a h1 tag", async(() => {
@@ -27,4 +33,11 @@ describe("AppComponent", () => {
       "Welcome to app!"
     );
   }));
+  // TODO: Fix it since getting errors trying to get router directives
+  xit("should have app-navbar and router-outlet directive", () => {
+    // const routerLinkElements = fixture.debugElement.queryAll(
+    //   By.directive(RouterLinkWithHref)
+    // );
+    // console.log(routerLinkElements);
+  });
 });

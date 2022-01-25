@@ -62,7 +62,8 @@ export class SpotifyService {
         // "Bearer BQAKRQm6UKswq9g1NTWgDw0f0qUviSo0fNahJ6r8yq6yUCUv7R56WiWQT0RXoL_pmT1Ktzb3SiTah2TJMFs",
         // "Bearer BQCcuQ6VcjmypVj8sQ6oKdT_QH9MOUex-dJPRU7GEW_pndPFvDb4nwU2R69b5HqkrYEOx0fztLPUYmvHQlY",
         // "Bearer BQCGCZpFuscLxHooMLiEJyTFWbT5fsazuOYYVWSdSaB-IwOBbb9RvCohmQXBCixE9DQIIUNw-t-XjoZzkHc",
-        "Bearer BQDLxICR6baglZNVF6A8hoNQBKuVOOnbjv6PGL2D0RJwZxqsPxmv64vwJHg8-yVQ4dg3voyMrjhprtJ4e54",
+        // "Bearer BQDLxICR6baglZNVF6A8hoNQBKuVOOnbjv6PGL2D0RJwZxqsPxmv64vwJHg8-yVQ4dg3voyMrjhprtJ4e54",
+        "Bearer BQA-2ne3rBT-BXyd8Q9_MLbOk2glNELD5Nc38ZuoCDjiWK6Pl4Fk1-7BGv7T8AV2-2PFGe1CWpndiIVw9oc",
       // this.bearerToken, // TODO: How to call to this value ??
     });
 
