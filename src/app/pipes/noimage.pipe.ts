@@ -1,22 +1,19 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: 'noimage'
+  name: "noimage",
 })
 export class NoimagePipe implements PipeTransform {
-
-  transform( images: any[] ): string {
-
-    if ( !images ) {
-      return 'assets/img/noimage.png';
+  transform(images: any[]): string {
+    if (!images) {
+      return "assets/img/noimage.png";
     }
-  
-    if ( images.length > 0 ) {
+
+    if (images.length > 0) {
       return images[0].url;
     } else {
-      return 'assets/img/noimage.png';
+      // Just entered into hear, in case that it's not initialized??
+      return "assets/img/noimage.png";
     }
-
   }
-
 }

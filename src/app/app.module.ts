@@ -35,7 +35,7 @@ import { LoadingComponent } from "./components/shared/loading/loading.component"
   imports: [
     BrowserModule,
     HttpClientModule, // Configure dependency injector for HttpClient
-    RouterModule.forRoot(ROUTES, { useHash: true }),
+    RouterModule.forRoot(ROUTES, { useHash: true }), // Enable routing
   ],
   providers: [],
   bootstrap: [AppComponent],
