@@ -27,5 +27,6 @@ export class TarjetasComponent {
     }
 
     this.router.navigate(["/artist", artistaId]);
+    // It concats all the items into navigate
   }
 }

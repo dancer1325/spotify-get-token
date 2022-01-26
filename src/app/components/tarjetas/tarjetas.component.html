@@ -2,6 +2,7 @@
 
 
     <div (click)="verArtista( item )" *ngFor="let item of items" class="card puntero">
+        <!-- puntero . Style created to add sensation to click in the cards -->
         <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>

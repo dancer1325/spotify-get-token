@@ -4,11 +4,15 @@
 <div class="row animated fadeIn" *ngIf="!loadingArtist">
     <div class="col-2">
         <img [src]="artista.images | noimage" class="img-thumbnail img-circle">
+        <!-- An image is mapped to some resource with the attribute src -->
+        <!-- img-thumbnail From Bootstrap. Give a specific style to the image -->
+        <!-- img-circle Custom style -->
     </div>
 
     <div class="col">
         <h3>{{ artista.name }}</h3>
         <p>
+            <!-- A text is mapped to some resource with the attribute href -->
             <a [href]="artista.external_urls.spotify" target="_blank">
           Ir a la página del artista
         </a>
@@ -43,12 +47,17 @@
                 <tr *ngFor="let track of topTracks">
                     <td>
                         <img [src]="track.album.images | noimage" class="img-thumb">
+                        <!-- img-thumb  Customized style, for a moderated size -->
                     </td>
                     <td>{{ track.album.name }}</td>
                     <td>{{ track.name }}</td>
                     <td>
+                        <!-- Ways to inser an audio -->
+                        <!-- 1) HTML audio -->
                         <!-- <audio [src]="track.preview_url" controls></audio> -->
+                        <!-- 2) iframe which it's a spoitfy widget  -->
                         <iframe [src]="track.uri | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <!-- Required not to restrict angular to redirect / open external urls -- Use DomSanitizer, via a pipe -->
                     </td>
                 </tr>
             </tbody>

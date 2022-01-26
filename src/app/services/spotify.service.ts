@@ -63,7 +63,9 @@ export class SpotifyService {
         // "Bearer BQCcuQ6VcjmypVj8sQ6oKdT_QH9MOUex-dJPRU7GEW_pndPFvDb4nwU2R69b5HqkrYEOx0fztLPUYmvHQlY",
         // "Bearer BQCGCZpFuscLxHooMLiEJyTFWbT5fsazuOYYVWSdSaB-IwOBbb9RvCohmQXBCixE9DQIIUNw-t-XjoZzkHc",
         // "Bearer BQDLxICR6baglZNVF6A8hoNQBKuVOOnbjv6PGL2D0RJwZxqsPxmv64vwJHg8-yVQ4dg3voyMrjhprtJ4e54",
-        "Bearer BQA-2ne3rBT-BXyd8Q9_MLbOk2glNELD5Nc38ZuoCDjiWK6Pl4Fk1-7BGv7T8AV2-2PFGe1CWpndiIVw9oc",
+        // "Bearer BQA-2ne3rBT-BXyd8Q9_MLbOk2glNELD5Nc38ZuoCDjiWK6Pl4Fk1-7BGv7T8AV2-2PFGe1CWpndiIVw9oc",
+        // "Bearer BQA9D13VeX9Q2rbJ02LCW6CQCKdrTPBGQplk2v0LeY7Lwi7NAEukZYMo8BphTAoTpJsKl1mVAJ0lhlqbi9U",
+        "Bearer BQBq2vWRGxldd2FaOhdZLyl3gEivFsEW7-zFdSirXbn6gNk7r2ePzk6qdLH7z6h1lfGM470aXqIhzuHNd1o",
       // this.bearerToken, // TODO: How to call to this value ??
     });
 
@@ -72,13 +74,13 @@ export class SpotifyService {
 
   getNewReleases() {
     return this.getQuery("browse/new-releases?limit=20").pipe(
-      map((data) => data["albums"].items)
+      map((data) => data["albums"].items) //Map to an object with just "albums.items"
     );
   }
 
   getArtistas(termino: string) {
     return this.getQuery(`search?q=${termino}&type=artist&limit=15`).pipe(
-      map((data) => data["artists"].items)
+      map((data) => data["artists"].items) //Map to an object with just "artists.items"
     );
   }
 
@@ -89,7 +91,8 @@ export class SpotifyService {
 
   getTopTracks(id: string) {
     return this.getQuery(`artists/${id}/top-tracks?country=us`).pipe(
-      map((data) => data["tracks"])
+      map((data) => data["tracks"]) //Map to an object with just "tracks.items"
     );
+    // ?country=us  Added the default one, because it's mandatory for this request
   }
 }
